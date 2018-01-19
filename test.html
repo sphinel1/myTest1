@@ -1,0 +1,29 @@
+<html>
+<head>
+<script>
+var xhr = new XMLHttpRequest();
+var svcKey = "bJ%2FksPU24QXLYzYx%2BAXaDHatKM4MbJsUlr%2F7MgCwyaaIiwjTvYXO%2FOZqZbCThVPqspDERTadQ56J9fyHToG1JA%3D%3D";
+var url = 'http://apis.data.go.kr/B090041/openapi/service/SpcdeInfoService/getHoliDeInfo';
+           
+var queryParams = "";
+		   
+
+queryParams += '?' + encodeURIComponent('solYear') + '=' + encodeURIComponent('2017');
+queryParams += '&' + encodeURIComponent('solMonth') + '=' + encodeURIComponent('12');
+queryParams += '&' + encodeURIComponent('ServiceKey') + '=' + svcKey;
+xhr.open('GET', url + queryParams);
+
+xhr.onreadystatechange = function () {
+    if (this.readyState == 4) {
+        alert('Status: '+this.status+' Headers: '+JSON.stringify(this.getAllResponseHeaders())+' Body: '+this.responseText);
+		
+		console.log(this.responseText);
+    }
+};
+
+xhr.send('');
+</script>
+</head>
+<body>
+</body>
+</html>
